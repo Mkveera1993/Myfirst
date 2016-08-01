@@ -1,0 +1,63 @@
+					<md-dialog aria-label="Add Doner" class="addDonerdialog">	
+					<form role="form" name="campform" ng-submit="submitCamp()">				
+						<md-content class="md-no-momentum">						
+							<md-input-container class="md-icon-float md-block" style=" padding-left: 36px;padding-right: 0;">
+								<!-- Use floating label instead of placeholder -->
+								<label style="left: 36px; right: auto;">Event Name</label>
+								<ng-md-icon icon="event" class="ic-color" style="margin-left: 0px;" ></ng-md-icon>
+								<input ng-model="event_Name" type="text" style="margin-left: 0px;"  ng-required="true">
+							</md-input-container>
+							<md-input-container class="md-icon-float md-block" >
+								<!-- Use floating label instead of placeholder -->
+								<label>Organizer Name</label>
+								<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="organizer_Name1" type="text" ng-required="true">
+							</md-input-container>
+							<div layout-gt-sm="row" >
+							<md-input-container  class="md-icon-float md-block" style=" padding-left: 36px;padding-right: 0;" ng-click="showDatePicker($event)" flex-gt-sm>
+								<!-- Use floating label instead of placeholder -->
+								<label style="left: 36px; right: auto;">Event Date</label>
+								<ng-md-icon icon="event" class="ic-color" style="margin-left: 0px;" ></ng-md-icon>
+								<input ng-model="currentDate" type="text" style="margin-left: 0px;"  ng-required="true">
+							</md-input-container>
+							<md-input-container  class="md-icon-float md-block " style=" padding-left: 36px;padding-right: 0;" ng-click="showTimePicker($event)" flex-gt-sm>
+								<!-- Use floating label instead of placeholder -->
+								<label style="left: 36px; right: auto;">Event Time</label>
+								<ng-md-icon icon="access_time" class="ic-color" style="margin-left: 0px;" ></ng-md-icon>
+								<input ng-model="currentTime"  type="text" style="margin-left: 0px;"  ng-required="true">
+							</md-input-container>
+							</div>
+							<md-input-container class="md-icon-float md-block">
+								<!-- Use floating label instead of placeholder -->
+								<label>Alter Organizer Name</label>
+								<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="organizer_Name2" type="text" ng-required="true">
+							</md-input-container>
+							<md-input-container  class="md-block">
+								<md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="mobile" name="mobile" type="text" wm-block wm-block-length="9" placeholder="Mobile Number" ng-required="true" ng-pattern="/^[0-9]{10}$/">
+								<span style="color:orange" ng-show="campform.mobile.$error.pattern">Please enter valid 10 Digit mobile number</span>
+							</md-input-container>
+							<md-input-container class="md-block">
+								<!-- Use floating placeholder instead of label -->
+								<md-icon  class="ic-color"><b>@</b></md-icon>
+								<input ng-model="email" type="email" placeholder="Email" ng-required="true">
+							</md-input-container>
+							<md-input-container  class="md-block">
+								<md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="altermobile" name="altermobile" type="text" wm-block wm-block-length="9" placeholder="Alter Mobile Number" ng-required="true" ng-pattern="/^[0-9]{10}$/">
+								<span style="color:orange" ng-show="campform.altermobile.$error.pattern">Please enter valid 10 Digit mobile number</span>
+							</md-input-container>							
+							<md-input-container  class="md-block">
+								<input ng-model="event_Venue" type="text" placeholder="Address" ng-required="true">
+								<md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;" class="ic-color"></md-icon>
+							</md-input-container>
+						</md-content>
+
+						<div class="md-actions" layout="row" id="errorspace"> 
+							<span flex><label class="md-warn" ng-show=""></span> 
+							<md-button ng-click="cancel()"> Cancel </md-button>
+							<md-button type="submit" class="md-warn" > Submit </md-button>
+						</div>
+						</form>
+					</md-dialog>

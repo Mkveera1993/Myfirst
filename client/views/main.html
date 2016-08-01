@@ -1,0 +1,78 @@
+
+            <div layout-gt-sm="row" > 
+              <div flex-gt-md ="75" flex-sx="100%"  >
+              <!--   <md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="addDoner($event)">
+                  <ng-md-icon icon="add"></ng-md-icon>
+                  <md-tooltip md-direction="top">Add new Doner</md-tooltip>
+                </md-button> -->
+                <md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="fblogin()">
+                  <ng-md-icon icon="add"></ng-md-icon>
+                  <md-tooltip md-direction="top">Add new Doner</md-tooltip>
+                </md-button>
+               <!--  <md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="glogin()">
+                  <ng-md-icon icon="add"></ng-md-icon>
+                  <md-tooltip md-direction="top">Add new Doner</md-tooltip>
+                </md-button> -->
+                <md-card class="md-whiteframe-2dp inset" style="margin:10px;" >
+                  <h3> Search Bloodgroup you Need</h3> 
+                  <md-divider ></md-divider>  
+                  <div layout-sm="column" flex-sx="100%" flex-sm="100%">
+                    <md-input-container   class="md-block">
+                      <label>Blood Groups</label>
+                      <md-select ng-model="selectedItem" ng-change="getbloodsgroups()">
+                        <md-optgroup label="Bloodgroups">
+                          <md-option ng-value="item" ng-repeat="item in bloodgroups ">{{item}}</md-option>
+                        </md-optgroup>
+                      </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-icon-float md-icon-right md-block"  ng-show="showSearch && bloodlist.length > 2" >
+                      <label>Filter by Name,Location,Mobile</label>
+                      <md-icon><i class="material-icons">search</i></md-icon>
+                      <input ng-model="searchText" type="text" step="0.01">
+                      <md-icon ><i class="material-icons">filter_list</i></md-icon>
+                    </md-input-container>                   
+                  </div>
+                </md-card>
+                <md-card class="md-whiteframe-2dp inset" style="margin:10px;"  ng-repeat="item in bloodlist | filter:searchText" >
+                  <div layout="row"  layout-align="space-between none">
+                    <div >    
+                      <ng-md-icon icon="person" class="ic-color" id="left"></ng-md-icon><b>&nbsp;&nbsp;&nbsp;{{item.name}}</b>
+                    </div>       
+                  </div> <br>
+                  <div layout-gt-sm="row"  >
+                    <div flex="10"   flex-xs="100"  layout-align="start">
+                      <ng-md-icon icon="opacity" class="ic-color" ng-click="isMobile||isTablet && makecall($event)"></ng-md-icon>&nbsp;&nbsp;&nbsp;{{item.bloodgroup}}
+                    </div>
+
+                    <div flex="20"  flex-xs="100" layout-align="start" >
+                     <ng-md-icon icon="perm_phone_msg" class="ic-color"></ng-md-icon>&nbsp;&nbsp;{{item.mobile}}
+                    </div>
+
+                    <div flex="20"   flex-xs="100" layout-align="start" >
+                      <ng-md-icon icon="perm_phone_msg" class="ic-color" ng-if="item.altermobile"></ng-md-icon>&nbsp;&nbsp;{{item.altermobile}}
+                    </div>
+
+                    <div flex="40"   flex-xs="100" layout-align="start">
+                      <ng-md-icon icon="contact_mail" class="ic-color"></ng-md-icon>&nbsp;&nbsp;{{item.email}}
+                    </div>
+
+                    <div flex="20"  flex-xs="100" layout-align="start" ng-click="viewAdrs(item,$event)" style="cursor:pointer">
+                    <md-tooltip>Click to view full Address</md-tooltip>
+                      <ng-md-icon icon="contact_mail" class="ic-color" >                      
+                      </ng-md-icon>&nbsp;&nbsp;{{item.address | limitTo: 10}}...
+                     </div>
+                  </div>
+
+                  <div layout="row" layout-align="end center">    
+                    <md-button  ng-click="sendRequest($event)" id="right">
+                     <ng-md-icon icon="send" style="color:#2AFFD4" ></ng-md-icon>
+                      <b> Send request</b>
+                    </md-button>
+                  </div> 
+
+                </md-card> 
+              </div>   
+
+              <div flex="20">
+              </div>
+            </div>

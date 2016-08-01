@@ -1,0 +1,60 @@
+<md-dialog aria-label="item.event_Name">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{item.event_Name}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:100%;max-height:100%; ">     
+          <md-content class="md-padding">
+          <md-input-container class="md-block">
+              <label>Venue</label>
+              <input ng-model="item.event_Venue" >
+          </md-input-container > 
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Event Name</label>
+              <input ng-model="item.event_Name" ng-disabled="true">
+            </md-input-container > 
+             <md-input-container class="md-block" flex-gt-sm>
+              <label>Date</label>
+              <input ng-model="item.event_Date" ng-disabled="true">
+             </md-input-container >           
+          </div>
+           <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+              <label>Organizer Name1</label>
+              <input ng-model="item.organizer_Name1" ng-disabled="true">
+              </md-input-container >
+              <md-input-container class="md-block" flex-gt-sm>
+              <label>Organizer Name1</label>
+              <input ng-model="item.organizer_Name2" ng-disabled="true">
+              </md-input-container  >
+              <md-input-container class="md-block" flex-gt-sm>
+              <label>Mobile</label>
+              <input ng-model="item.mobile" ng-disabled="true">              
+              </md-input-container >
+           </div>           
+          <div layout-gt-sm="row" >
+              <md-input-container nf-if="item.altermobile" class="md-block" flex-gt-sm>
+              <label>Alter Mobile</label>
+              <input ng-model="item.altermobile" ng-disabled="true">              
+              </md-input-container >
+              <md-input-container class="md-block" flex-gt-sm>
+              <label>Email</label>
+              <input ng-model="item.email" ng-disabled="true">
+              </md-input-container >
+          </div>            
+          </md-content>        
+    </md-dialog-content>
+    <md-dialog-actions layout="row">    
+      <md-button class="md-icon-button" ng-click="cancel()" style="margin-right:20px;" >
+        OK
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

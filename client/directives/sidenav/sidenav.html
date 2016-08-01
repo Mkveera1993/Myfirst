@@ -1,0 +1,41 @@
+						<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+							<md-toolbar class="md-tall md-hue-2">
+								<span flex></span>
+								<div layout="column" class="md-toolbar-tools-bottom inset">
+									<div layout="row" layout-align="center center"><img src="../../../images/bloodAmb.png" />
+									</div>
+									<span></span>
+									<div layout="row" layout-align="center center">BloodApp</div>
+
+								</div>
+								<!--  <div layout="column" layout-align="end start"></div> -->
+							</md-toolbar>
+							<md-list>
+							<md-subheader>Pages</md-subheader>
+								<md-list-item md-ink-ripple  ng-repeat="item in menu" ng-click="close($event)">
+									<a href="{{item.link}}" style="text-decoration: none;color:#000000">
+										<md-item-content layout="row" layout-align="start center">
+											<div class="inset">
+												<ng-md-icon icon="{{item.icon}}" class="ic-color"></ng-md-icon>
+											</div>
+											<div class="inset">{{item.title}}
+											</div>
+										</md-item-content>
+									</a>
+								</md-list-item>
+								<md-divider></md-divider>
+								<md-subheader>Others</md-subheader>
+								<md-list-item md-ink-ripple ng-repeat="item in admin" ng-click="close($event)" ng-mousedown="item.title === 'Share' &&showGridBottomSheet($event)" >
+									<a href="{{item.link}}" style="text-decoration: none;color:#000000">
+										<md-item-content  layout="row" layout-align="start center">
+											<div class="inset">
+												<ng-md-icon icon="{{item.icon}}" class="ic-color"></ng-md-icon>
+											</div>
+											<div class="inset">{{item.title}}
+											</div>
+										</md-item-content>
+									</a>
+								</md-list-item>
+							</md-list>
+						</md-sidenav>
+

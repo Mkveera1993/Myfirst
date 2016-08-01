@@ -1,0 +1,89 @@
+			<!DOCTYPE html>
+			<html ng-app="Bloodapp">
+			<head>
+				<title>BloodApp</title>
+				<base href="/">
+				<link rel="icon" type="image/x-icon" href="images/bloodgroup.png" />
+				<meta name="viewport" content="initial-scale=1" />
+				<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1">
+				<style>
+					/*some css*/
+					@media only screen and (min-device-width:320px) and (max-device-width:480px){
+						/*Same css with changed values*/
+					}
+				</style> 
+				<!-- CSS -->
+				<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
+				<link rel="stylesheet" type="text/css" href="bower_components/angular-material-icons/angular-material-icons.css">
+				<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                 rel="stylesheet">
+				<link rel="stylesheet" type="text/css" href="styles/css/main.css">
+				<link rel="stylesheet" type="text/css" href="bower_components/mdPickers/dist/mdPickers.min.css">
+				<link rel="stylesheet" type="text/css" href="bower_components/angular-treasure-overlay-spinner/dist/treasure-overlay-spinner.min.css" >
+				<link rel="stylesheet" type="text/css" href="styles/css/pace.css">
+			</head>
+
+			<body ng-controller="MainController" layout="row" ng-cloak>	
+			          
+				<div layout="column" class="relative" layout-fill role="main">
+					<toolbar ></toolbar>
+					<sidenav></sidenav>					
+					<md-content md-scroll-y layout="column" flex>
+						<ng-view  layout-padding flex="noshrink" class="slide" >							
+						</ng-view>						
+					</md-content>	
+				</div>
+
+				<!-- BOWER SCRIPTS -->
+				<script src="bower_components/angular/angular.js"></script>
+				<script src="bower_components/angular-material/angular-material.js"></script>
+				<script src="bower_components/angular-route/angular-route.js"></script>
+				<script src="bower_components/angular-animate/angular-animate.js"></script>
+				<script src="bower_components/angular-aria/angular-aria.js"></script>
+				<script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+				<script src="bower_components/angular-messages/angular-messages.js"></script>
+				<script src="bower_components/svg-morpheus/source/js/svg-morpheus.js"></script>
+				<script src="bower_components/ng-device-detector/ng-device-detector.js"></script>
+				<script src="bower_components/re-tree/re-tree.js"></script>
+				<script src="bower_components/svg-assets-cache.js/svg-assets-cache.js"></script>
+				<script src="bower_components/moment/min/moment.min.js"></script>
+				<script src="bower_components/mdPickers/dist/mdPickers.min.js"></script>
+				<script src="bower_components/angular-treasure-overlay-spinner/dist/treasure-overlay-spinner.min.js"></script>
+				<script src="bower_components/angular-google-plus/dist/angular-google-plus.min.js"></script>
+				<script src="bower_components/ng-facebook/ngFacebook.js"></script>
+
+
+
+
+				<!-- CONTROLLERS -->
+
+
+				<script src="controllers/MainCtrl.js"></script>
+				<script src="controllers/BloodcampCtrl.js"></script>
+				<script src="directives/toolbar/ToolbarCtrl.js"></script>
+				<script src="directives/sidenav/SidenavCtrl.js"></script>
+
+
+
+				<!--  SERVICES -->
+				<script src="services/BloodgroupService.js"></script>
+				<script src="services/BloodcampService.js"></script>
+
+
+
+				<!-- DIRECTIVES -->
+				<script src="directives/toolbar/toolbarDirective.js"></script>
+				<script src="directives/sidenav/sidenavDirective.js"></script>
+				<script src="directives/mobile/mobileDirective.js"></script>
+				<script src="directives/pace.min.js"></script>
+
+				<!-- FILTERS -->
+				<script src="filters/capitalize.js"></script>
+
+				<!-- MAIN AND ROUTE -->
+				<script src="app.js"></script>
+				<script src="routes.js"></script>
+
+			</body>
+			</html> 
+	

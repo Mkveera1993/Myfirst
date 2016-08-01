@@ -1,0 +1,37 @@
+
+<div layout-gt-sm="row" > 
+  <div flex-gt-sm ="75" flex-sx="100%" flex-sm="100%"  >
+  <h3 class="inset">Bloodcamps</h3> 
+  <md-button class="md-fab md-fab-bottom-right md-primary md-hue-2" aria-label="Add" ng-click="addCamp($event)">
+        <ng-md-icon icon="add"></ng-md-icon>
+        <md-tooltip md-direction="top">
+              Add new camp
+            </md-tooltip>
+      </md-button>   
+    <md-card class="md-whiteframe-2dp inset" style="margin:10px;"  ng-repeat="item in bloodcamps"  infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+      <div layout="row" layout-align="space-between none">
+        <div >    
+          <ng-md-icon icon="event" class="ic-color" id="left" ></ng-md-icon><b>&nbsp;&nbsp;&nbsp;{{item.event_Date}}</b>
+        </div>        
+        <div>    
+          <md-button class="ic-color md-icon-button" ng-click="showDetails($event,item)" id="right"  aria-label="showDetails"> <ng-md-icon icon="visibility" ></ng-md-icon>
+          <md-tooltip>Click to view full Details</md-tooltip>
+          </md-button>
+        </div>
+      </div> <br><br>
+      <div layout-gt-sm="row"  >
+      <div flex="30" flex-sm="100"  flex-xs="100"  layout-align="start"><ng-md-icon  class="ic-color" icon="person"></ng-md-icon>&nbsp;&nbsp;&nbsp;{{item.event_Name| limitTo: 30}}</div>
+        <div flex="20" flex-sm="100"  flex-xs="100" layout-align="start" ><ng-md-icon icon="perm_phone_msg" class="ic-color" ng-click="isMobile||isTablet && makecall($event)"></ng-md-icon>&nbsp;&nbsp;{{item.mobile}}</div>
+        <div flex="30" flex-sm="100"  flex-xs="100" layout-align="start"><ng-md-icon icon="contact_mail" class="ic-color"></ng-md-icon>&nbsp;&nbsp;{{item.email | limitTo: 30}}</div>
+         <div flex="20" flex-sm="100"  flex-xs="100" layout-align="start"><ng-md-icon icon="location_on" class="ic-color"></ng-md-icon>&nbsp;&nbsp;{{item.event_Venue | limitTo: 30}}</div>
+      </div> 
+    </md-card> 
+  </div>   
+
+  <div flex="20">
+
+
+
+
+  </div>
+</div>

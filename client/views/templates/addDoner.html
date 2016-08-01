@@ -1,0 +1,58 @@
+				<md-dialog aria-label="Add Doner" class="addDonerdialog" style="background-color: #FFFFFF;">
+					<md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+					<form  name="donerform" ng-submit="addDoner()">
+						<md-content class="md-no-momentum">
+							<md-input-container class="md-icon-float md-block">
+								<!-- Use floating label instead of placeholder -->
+								<label >Name</label>
+								<md-icon md-svg-src="img/icons/ic_person_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="name" type="text" ng-required="true">
+							</md-input-container>
+							<md-input-container  class="ng-md-icon-float md-block" >
+								<ng-md-icon icon="opacity" class="ic-color " style="display:inline-block;"></ng-md-icon>	
+								<label style="left: 36px; right: auto;">Blood groups</label>						
+								<md-select ng-model="bloodgroup" style="margin: 0;margin-left: 35px;margin-bottom: 21px;-ms-flex-order: 2;order: 2;" ng-required="true">
+									<md-optgroup label="Bloodgroups">
+										<md-option ng-value="item" ng-repeat="item in groups">{{item}}</md-option>
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+							<md-input-container  class="md-block">
+								<md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="mobile" name="mobile" wm-block type="number"  placeholder="Phone Number" wm-block-length="9"   ng-pattern="/^[0-9]{10}$/" ng-required>
+								<span style="color:orange" ng-show="donerform.mobile.$error.pattern">Please enter valid 10 Digit mobile number</span>
+							</md-input-container>
+							<md-input-container class="md-block">							
+								<md-icon md-svg-src="img/icons/ic_email_24px.svg" style="display:inline-block;" class="ic-color"></md-icon>
+								<input ng-model="email" type="email" placeholder="Email " ng-required="true">
+							</md-input-container>
+							<md-input-container  class="md-block">
+								<input ng-model="address" type="text" placeholder="Permanent Address" ng-required="true">
+								<md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;" class="ic-color"></md-icon>
+							</md-input-container>
+							<md-input-container  class="md-actions"  layout="row" layout-align="end center">							 
+								<md-checkbox ng-model="same_as" class="md-primary hue-2" aria-label="Same As Above Address" ng-change="makesame()" >    Same as above Address       				
+								</md-checkbox>
+							</md-input-container>							
+							<md-input-container  class="md-block">
+								<input   ng-model="currentaddress" type="text" placeholder="Current Address" ng-required="true">
+								<md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;" class="ic-color"></md-icon>
+							</md-input-container>							
+							<md-input-container  class="md-block">
+								<md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="ic-color"></md-icon>
+								<input ng-model="altermobile" name="altermobile" wm-block type="number"  placeholder="Alter Phone Number" wm-block-length="9"   ng-pattern="/^[0-9]{10}$/" >
+								<span style="color:orange" ng-show="donerform.altermobile.$error.pattern">Please enter valid 10 Digit mobile number</span>
+							</md-input-container>
+							<md-input-container  class="md-actions"  layout="row" layout-align="end center">							 
+								<md-checkbox ng-model="share" class="md-primary hue-2" aria-label="Share Contacts " > Share Contacts to Others
+								</md-checkbox>
+							</md-input-container>
+
+						</md-content>
+
+						<div class="md-actions" layout="row" id="errorspace">
+							<md-button ng-click="cancel()" class=" md-warn"> Cancel </md-button>
+							<md-button type="submit" class="md-primary" > Submit </md-button>
+						</div>
+					</form>
+				</md-dialog>
